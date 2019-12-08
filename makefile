@@ -1,32 +1,31 @@
 
 COMPILER=gcc
-INCLUDE="./include/"
 CC = g++
 BIN = ./bin
 SRCDIR = ./src
+OBJDIR = ./obj
+LIBS = -lWS2_32
 SRCS = $(shell find $(SRCDIR) -name '*.c')
 #OBJS = $(shell find $(OBJDIR) -name '*.o')
 OBJS = $(SRCS:.c=.o)
-INCL = -I./include -L./lib
+INCL = -I./include
 
 DEBUG = -g
-server_file = server
+client_file = client
 CFLAGS = -m64 -Wall
 
 .PHONY: default
 
-default: server
+default: client
 
-SRV_FILES = $(SRCDIR)/server_main.c
+CLI_FILES = $(SRCDIR)/client_main.c
 
-server:
-	$(COMPILER) $(SRV_FILES) $(DEBUG) $(CFLAGS) $(INCL) -o $(BIN)/$(server_file)
+client:
+	$(COMPILER) $(CLI_FILES) $(LIBS) $(DEBUG) $(CFLAGS) $(INCL) -o $(BIN)/$(client_file)
 
+run:
+	./$(BIN)/$(client_file)
 
 clean:
 	rm ./$(BIN)/*
-
-run:
-	./$(BIN)/$(server_file)
-
 
