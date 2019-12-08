@@ -18,6 +18,6 @@
 
 <h4>Algunos links interesantes:</h4>
 
-https://www.binarytides.com/winsock-socket-programming-tutorial/
-https://beej.us/guide/bgnet/html//index.html
-https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
+<a href="https://www.binarytides.com/winsock-socket-programming-tutorial/">Programing tutorial winsock</a>
+<a href="https://beej.us/guide/bgnet/html//index.html">C sockets</a>
+<a href="https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/">tcp client server implementation</a>
